@@ -327,45 +327,32 @@ export default async function CaseDetailPage({
                   href={`/cases/${rc.id}`}
                   className="group block"
                 >
-                  <div className="bg-white rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-lg transition-all duration-300 overflow-hidden">
-                    <div className="h-36 bg-gradient-to-br from-teal/5 to-sky-light flex items-center justify-center">
-                      <div className="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center group-hover:bg-teal/20 transition-colors">
-                        <svg
-                          className="w-6 h-6 text-teal"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      </div>
+                  <div className="bg-white rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-lg transition-all duration-300 overflow-hidden p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs px-2 py-0.5 bg-teal/10 text-teal rounded-full">
+                        {rc.category}
+                      </span>
+                      <span
+                        className={`text-xs px-2 py-0.5 rounded-full ${
+                          resultColors[rc.result] ||
+                          "bg-gray-100 text-gray-600"
+                        }`}
+                      >
+                        {rc.result}
+                      </span>
                     </div>
-                    <div className="p-5">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs px-2 py-0.5 bg-teal/10 text-teal rounded-full">
-                          {rc.category}
-                        </span>
-                        <span
-                          className={`text-xs px-2 py-0.5 rounded-full ${
-                            resultColors[rc.result] ||
-                            "bg-gray-100 text-gray-600"
-                          }`}
-                        >
-                          {rc.result}
-                        </span>
-                      </div>
-                      <h3 className="font-bold text-gray-900 group-hover:text-teal transition-colors">
-                        {rc.title}
-                      </h3>
-                      <p className="text-gray-500 text-sm mt-1 line-clamp-1">
-                        {rc.summary}
-                      </p>
-                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2 group-hover:text-teal transition-colors">
+                      {rc.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm line-clamp-2 mb-3">
+                      {rc.summary}
+                    </p>
+                    <span className="text-teal text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      자세히 보기
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
                   </div>
                 </Link>
               ))}
