@@ -57,7 +57,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
                   pathname === item.href
                     ? isScrolled
                       ? "text-teal bg-teal/5"
@@ -72,7 +72,11 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="ml-4 px-6 py-2.5 bg-teal text-white text-sm font-semibold rounded-lg hover:bg-teal-light transition-colors"
+              className={`ml-4 px-6 py-2.5 text-base font-bold rounded-lg transition-colors ${
+                isScrolled
+                  ? "bg-teal text-white hover:bg-teal-light"
+                  : "bg-white text-teal-dark hover:bg-gray-100"
+              }`}
             >
               예약 상담
             </Link>
