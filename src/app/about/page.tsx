@@ -97,7 +97,7 @@ export default function AboutPage() {
             {/* 사진 영역 */}
             <div className="rounded-3xl overflow-hidden min-h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80"
+                src="/images/team/김민수.jpeg"
                 alt="김민수 대표원장"
                 className="w-full h-full min-h-[400px] object-cover"
               />
