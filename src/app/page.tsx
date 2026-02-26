@@ -139,7 +139,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl p-6 shadow-sm mb-6">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&q=80" alt="김민수 대표원장" className="w-full h-full object-cover" />
+                    <img src="/images/team/김민수.jpeg" alt="김민수 대표원장" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-bold text-gray-900 text-lg">김민수 대표원장</p>

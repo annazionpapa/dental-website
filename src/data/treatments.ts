@@ -1,3 +1,8 @@
+export interface GalleryImage {
+  url: string;
+  caption: string;
+}
+
 export interface Treatment {
   id: string;
   name: string;
@@ -8,6 +13,7 @@ export interface Treatment {
   targets: string[];
   process: string[];
   caution: string;
+  gallery: GalleryImage[];
 }
 
 export const treatments: Treatment[] = [
@@ -33,6 +39,20 @@ export const treatments: Treatment[] = [
       "정기 검진 및 유지 관리",
     ],
     caution: "임플란트 시술 후 출혈, 부종, 감염 등의 부작용이 발생할 수 있으며, 개인에 따라 치료 결과가 다를 수 있습니다. 전신 질환(당뇨, 골다공증 등)이 있는 경우 사전에 반드시 상담이 필요합니다.",
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80",
+        caption: "3D CT 정밀 진단",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80",
+        caption: "첨단 시술 장비",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1758206524132-72a2aa6639e2?w=600&q=80",
+        caption: "안전한 임플란트 시술",
+      },
+    ],
   },
   {
     id: "orthodontics",
@@ -56,6 +76,20 @@ export const treatments: Treatment[] = [
       "유지 장치 착용 및 관리",
     ],
     caution: "교정 치료 중 치아 통증, 구내염, 치근 흡수 등의 부작용이 발생할 수 있습니다. 치료 기간은 개인에 따라 12~30개월 정도 소요되며, 유지 장치를 착용하지 않으면 재발 가능성이 있습니다.",
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1598256989809-394fa4f6cd26?w=600&q=80",
+        caption: "정밀 교정 장치",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1643401142249-84ef35c123c9?w=600&q=80",
+        caption: "맞춤 교정 시술",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1675526607070-f5cbd71dde92?w=600&q=80",
+        caption: "교정 후 환한 미소",
+      },
+    ],
   },
   {
     id: "cosmetic",
@@ -79,6 +113,20 @@ export const treatments: Treatment[] = [
       "정기 검진",
     ],
     caution: "라미네이트 시술 시 치아를 일부 삭제해야 하며, 시술 후 시린 증상이 일시적으로 나타날 수 있습니다. 미백의 경우 치아 과민증이 발생할 수 있으며, 개인에 따라 미백 효과가 다를 수 있습니다.",
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80",
+        caption: "정밀 심미 진단",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1651893616691-829debd881af?w=600&q=80",
+        caption: "정교한 심미 도구",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=600&q=80",
+        caption: "아름다운 미소 완성",
+      },
+    ],
   },
   {
     id: "restorative",
@@ -102,6 +150,20 @@ export const treatments: Treatment[] = [
       "정기 검진",
     ],
     caution: "충치 치료 후 일시적인 시린 증상이 나타날 수 있으며, 충치가 깊은 경우 신경 치료가 필요할 수 있습니다. 신경 치료 시 치아가 약해질 수 있어 크라운 보철이 권장됩니다.",
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1766338390573-ec092d69cdcb?w=600&q=80",
+        caption: "정밀 충치 진단",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1758205308179-4e00e0e4060b?w=600&q=80",
+        caption: "꼼꼼한 보존 치료",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1770321119162-05c18fbcfdb9?w=600&q=80",
+        caption: "최신 치료 장비",
+      },
+    ],
   },
   {
     id: "pediatric",
@@ -125,6 +187,20 @@ export const treatments: Treatment[] = [
       "정기 검진 (3~6개월)",
     ],
     caution: "소아의 경우 치료 중 움직임으로 인해 추가 진료가 필요할 수 있습니다. 불소 도포 후 30분간 음식물 섭취를 삼가야 합니다. 개인에 따라 치료 반응이 다를 수 있습니다.",
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1619236233405-bb5d430f0620?w=600&q=80",
+        caption: "아이 친화적 진료",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1758205307836-0829c799890b?w=600&q=80",
+        caption: "즐거운 치과 경험",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1758205308172-fc864545dcf7?w=600&q=80",
+        caption: "성장기 치아 관리",
+      },
+    ],
   },
   {
     id: "surgery",
@@ -148,6 +224,20 @@ export const treatments: Treatment[] = [
       "경과 확인 및 추후 관리",
     ],
     caution: "수술 후 출혈, 부종, 통증, 감각 이상 등의 부작용이 발생할 수 있습니다. 매복 사랑니의 경우 신경 손상의 위험이 있을 수 있으며, 개인에 따라 회복 기간이 다릅니다.",
+    gallery: [
+      {
+        url: "https://images.unsplash.com/photo-1758205308106-5760d0227cc7?w=600&q=80",
+        caption: "정밀 외과 시술",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1643660527071-52e37cf7c7ea?w=600&q=80",
+        caption: "안전한 수술 환경",
+      },
+      {
+        url: "https://images.unsplash.com/photo-1681939283065-011297ba26eb?w=600&q=80",
+        caption: "전문 의료진 케어",
+      },
+    ],
   },
 ];
 

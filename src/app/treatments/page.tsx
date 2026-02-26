@@ -78,23 +78,49 @@ export default function TreatmentsPage() {
           } scroll-mt-24`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* 상단: 타이틀 */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center text-3xl">
+                {treatment.icon}
+              </div>
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                  {treatment.name}
+                </h2>
+                <p className="text-teal font-medium text-sm mt-1">
+                  {treatment.shortDesc}
+                </p>
+              </div>
+            </div>
+
+            {/* 이미지 갤러리 */}
+            {treatment.gallery && treatment.gallery.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+                {treatment.gallery.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-sm"
+                  >
+                    <img
+                      src={img.url}
+                      alt={img.caption}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-white text-sm font-semibold drop-shadow-sm">
+                        {img.caption}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* 좌측: 기본 정보 */}
               <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center text-3xl">
-                    {treatment.icon}
-                  </div>
-                  <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                      {treatment.name}
-                    </h2>
-                    <p className="text-teal font-medium text-sm mt-1">
-                      {treatment.shortDesc}
-                    </p>
-                  </div>
-                </div>
-
                 <p className="text-gray-600 leading-relaxed mb-8">
                   {treatment.description}
                 </p>

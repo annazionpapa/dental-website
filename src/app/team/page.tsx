@@ -21,7 +21,7 @@ const doctors: Doctor[] = [
     name: "김민수",
     role: "대표원장",
     specialty: "치과보철과 전문의",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80",
+    image: "/images/team/김민수.jpeg",
     highlight: "임플란트 3,000건+",
     credentials: [
       "서울대학교 치과대학 졸업",
@@ -36,7 +36,7 @@ const doctors: Doctor[] = [
     name: "박서연",
     role: "부원장",
     specialty: "치과교정과 전문의",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80",
+    image: "/images/team/박서연.jpeg",
     highlight: "투명교정 전문",
     credentials: [
       "연세대학교 치과대학 졸업",
@@ -51,7 +51,7 @@ const doctors: Doctor[] = [
     name: "이하은",
     role: "진료의",
     specialty: "소아치과 / 보존치료",
-    image: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=800&q=80",
+    image: "/images/team/이하은.jpeg",
     highlight: "아이 눈높이 진료",
     credentials: [
       "서울대학교 치과대학 졸업",
@@ -62,10 +62,10 @@ const doctors: Doctor[] = [
     ],
   },
   {
-    name: "최준혁",
+    name: "장안나",
     role: "진료의",
     specialty: "심미치료 / 보존치료",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=80",
+    image: "/images/team/장안나.jpeg",
     highlight: "디지털 스마일 디자인",
     credentials: [
       "경희대학교 치과대학 졸업",
