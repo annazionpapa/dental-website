@@ -159,7 +159,7 @@ export default function Home() {
             </div>
             <div className="rounded-3xl overflow-hidden min-h-[400px]">
               <img
-                src="https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?w=800&q=80"
+                src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe6?w=800&q=80"
                 alt="치과 진료 모습"
                 className="w-full h-full min-h-[400px] object-cover"
               />
