@@ -41,11 +41,11 @@ export const treatments: Treatment[] = [
     caution: "임플란트 시술 후 출혈, 부종, 감염 등의 부작용이 발생할 수 있으며, 개인에 따라 치료 결과가 다를 수 있습니다. 전신 질환(당뇨, 골다공증 등)이 있는 경우 사전에 반드시 상담이 필요합니다.",
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80",
         caption: "3D CT 정밀 진단",
       },
       {
-        url: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1679496125396-8d01c968d071?w=600&q=80",
         caption: "첨단 시술 장비",
       },
       {
@@ -119,7 +119,7 @@ export const treatments: Treatment[] = [
         caption: "정밀 심미 진단",
       },
       {
-        url: "https://images.unsplash.com/photo-1651893616691-829debd881af?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1725409796852-c0aa3aa61346?w=600&q=80",
         caption: "정교한 심미 도구",
       },
       {
@@ -160,7 +160,7 @@ export const treatments: Treatment[] = [
         caption: "꼼꼼한 보존 치료",
       },
       {
-        url: "https://images.unsplash.com/photo-1770321119162-05c18fbcfdb9?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1642844819197-5f5f21b89ff8?w=600&q=80",
         caption: "최신 치료 장비",
       },
     ],
@@ -189,15 +189,15 @@ export const treatments: Treatment[] = [
     caution: "소아의 경우 치료 중 움직임으로 인해 추가 진료가 필요할 수 있습니다. 불소 도포 후 30분간 음식물 섭취를 삼가야 합니다. 개인에 따라 치료 반응이 다를 수 있습니다.",
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1619236233405-bb5d430f0620?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1653508310895-62141575a3a9?w=600&q=80",
         caption: "아이 친화적 진료",
       },
       {
-        url: "https://images.unsplash.com/photo-1758205307836-0829c799890b?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1733817336090-04082ff6ab4f?w=600&q=80",
         caption: "즐거운 치과 경험",
       },
       {
-        url: "https://images.unsplash.com/photo-1758205308172-fc864545dcf7?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1611146033545-5e1e5ad951d8?w=600&q=80",
         caption: "성장기 치아 관리",
       },
     ],
@@ -234,7 +234,7 @@ export const treatments: Treatment[] = [
         caption: "안전한 수술 환경",
       },
       {
-        url: "https://images.unsplash.com/photo-1681939283065-011297ba26eb?w=600&q=80",
+        url: "https://images.unsplash.com/photo-1758205308181-d52b41e00cef?w=600&q=80",
         caption: "전문 의료진 케어",
       },
     ],

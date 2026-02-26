@@ -48,7 +48,7 @@ const facilities = [
   },
   {
     name: "구강스캐너 (iTero)",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1663229049147-30f47be043ea?w=600&q=80",
     desc: "불편한 본뜨기 없이 구강 내부를 디지털로 스캔합니다. 교정 및 보철 치료 시 정밀한 데이터를 빠르게 확보할 수 있습니다.",
   },
   {
