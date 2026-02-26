@@ -177,12 +177,15 @@ function ContactContent() {
                       희망 날짜
                     </label>
                     <input
-                      type="date"
+                      type={formData.date ? "date" : "text"}
                       id="date"
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
+                      onFocus={(e) => { e.target.type = "date"; }}
+                      onBlur={(e) => { if (!e.target.value) e.target.type = "text"; }}
                       className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal/20 focus:border-teal outline-none transition-all text-gray-900"
+                      placeholder="희망 날짜 선택"
                     />
                   </div>
                 </div>
