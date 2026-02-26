@@ -84,3 +84,13 @@ input[type="date"]::-webkit-datetime-edit { color: transparent; }
 @media (max-width: 767px) {
   body { padding-bottom: 64px; }
 }
+
+/* 관리자 페이지: 헤더/푸터/모바일바 숨김 */
+body.admin-page > header,
+body.admin-page > footer,
+body.admin-page > .mobile-bottom-cta,
+body.admin-page > div[class*="mobile"] {
+  display: none !important;
+}
+body.admin-page { padding-bottom: 0 !important; }
+body.admin-page > main { padding: 0; }

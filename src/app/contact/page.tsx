@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { supabase } from "@/lib/supabase";
 
 const treatmentOptions = [
   "선택해주세요",
@@ -59,6 +60,8 @@ function ContactContent() {
     message: "",
   });
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState<"success" | "error" | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -68,11 +71,29 @@ function ContactContent() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(
-      "상담 신청이 접수되었습니다. 빠른 시간 내에 연락드리겠습니다."
-    );
+    setIsSubmitting(true);
+    setSubmitResult(null);
+
+    try {
+      const { error } = await supabase.from("consultations").insert({
+        name: formData.name,
+        phone: formData.phone,
+        treatment: formData.treatment === "선택해주세요" ? "기타" : formData.treatment,
+        preferred_date: formData.date || null,
+        message: formData.message,
+      });
+
+      if (error) throw error;
+
+      setSubmitResult("success");
+      setFormData({ name: "", phone: "", treatment: "선택해주세요", date: "", message: "" });
+    } catch {
+      setSubmitResult("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -215,11 +236,23 @@ function ContactContent() {
                   />
                 </div>
 
+                {submitResult === "success" && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-center">
+                    ✅ 상담 신청이 접수되었습니다. 빠른 시간 내에 연락드리겠습니다.
+                  </div>
+                )}
+                {submitResult === "error" && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-center">
+                    접수 중 오류가 발생했습니다. 전화(02-555-2080)로 문의해 주세요.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-4 bg-teal text-white font-bold rounded-xl hover:bg-teal-light transition-colors text-lg"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-teal text-white font-bold rounded-xl hover:bg-teal-light transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  상담 예약 신청하기
+                  {isSubmitting ? "접수 중..." : "상담 예약 신청하기"}
                 </button>
 
                 <p className="text-gray-400 text-xs text-center">

@@ -1,0 +1,6 @@
+# Supabase 설정 (supabase.com에서 프로젝트 생성 후 Settings > API에서 확인)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+# 관리자 비밀번호 (원하는 비밀번호로 설정)
+ADMIN_PASSWORD=your-admin-password
