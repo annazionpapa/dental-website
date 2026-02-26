@@ -30,14 +30,14 @@ export default function Home() {
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-sky/10 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-in-up">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.3)' }}>
+          <p className="text-accent text-sm font-bold tracking-widest uppercase mb-4 animate-fade-in-up">
             Since 2004 · 강남역 도보 3분
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up animate-delay-100">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up animate-delay-100">
             건강한 미소가<br />시작되는 곳
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 animate-fade-in-up animate-delay-200">
+          <p className="text-lg sm:text-xl text-white font-semibold max-w-2xl mx-auto mb-10 animate-fade-in-up animate-delay-200">
             20년 경력의 전문 의료진이 환자 한 분 한 분의<br className="hidden sm:block" />
             미소를 정성껏 설계합니다
           </p>
