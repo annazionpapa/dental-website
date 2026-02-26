@@ -43,27 +43,27 @@ const history = [
 const facilities = [
   {
     name: "3D CT (CBCT)",
-    icon: "🔬",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80",
     desc: "3차원 정밀 진단으로 뼈의 형태, 신경 위치, 병변을 정확히 파악합니다. 임플란트, 사랑니 발치 등에 필수적인 장비입니다.",
   },
   {
     name: "구강스캐너 (iTero)",
-    icon: "📱",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80",
     desc: "불편한 본뜨기 없이 구강 내부를 디지털로 스캔합니다. 교정 및 보철 치료 시 정밀한 데이터를 빠르게 확보할 수 있습니다.",
   },
   {
     name: "네비게이션 임플란트",
-    icon: "🎯",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&q=80",
     desc: "3D CT 데이터를 기반으로 수술 전 시뮬레이션을 진행하여 최적의 위치에 정확하게 임플란트를 식립합니다.",
   },
   {
     name: "CAD/CAM 시스템",
-    icon: "🖥️",
+    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&q=80",
     desc: "컴퓨터로 보철물을 설계하고 밀링 머신으로 정밀 제작합니다. 당일 보철 제작이 가능하여 내원 횟수를 줄입니다.",
   },
   {
     name: "멸균 시스템",
-    icon: "🛡️",
+    image: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80",
     desc: "Class B 고압증기멸균기를 사용하여 모든 기구를 철저하게 멸균합니다. 1인 1기구 포장 멸균 원칙을 준수합니다.",
   },
 ];
@@ -72,9 +72,9 @@ export default function AboutPage() {
   return (
     <>
       {/* 히어로 */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-teal-dark via-teal to-teal-light overflow-hidden">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-sky/10 rounded-full blur-3xl" />
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-teal-dark overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/65 via-teal-dark/45 to-teal-dark/75" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">
             About Us
@@ -236,17 +236,24 @@ export default function AboutPage() {
             {facilities.map((facility) => (
               <div
                 key={facility.name}
-                className="p-8 rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-lg transition-all duration-300 bg-white"
+                className="group rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-xl transition-all duration-300 bg-white overflow-hidden"
               >
-                <div className="w-14 h-14 bg-sky-light rounded-xl flex items-center justify-center text-2xl mb-5">
-                  {facility.icon}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={facility.image}
+                    alt={facility.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <h3 className="absolute bottom-3 left-4 text-lg font-bold text-white drop-shadow-lg">
+                    {facility.name}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {facility.name}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {facility.desc}
-                </p>
+                <div className="p-6">
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {facility.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

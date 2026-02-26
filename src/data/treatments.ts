@@ -2,6 +2,7 @@ export interface Treatment {
   id: string;
   name: string;
   icon: string;
+  image: string;
   shortDesc: string;
   description: string;
   targets: string[];
@@ -14,6 +15,7 @@ export const treatments: Treatment[] = [
     id: "implant",
     name: "임플란트",
     icon: "🦷",
+    image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80",
     shortDesc: "자연치아와 가장 유사한 영구적 치아 복원",
     description: "상실된 치아 부위에 인공 치근(임플란트)을 식립하고 그 위에 보철물을 연결하여 자연치아와 유사한 기능과 심미성을 회복하는 치료입니다. 미소플러스치과는 3D CT 정밀 진단과 네비게이션 임플란트 시스템으로 안전하고 정확한 시술을 제공합니다.",
     targets: [
@@ -36,6 +38,7 @@ export const treatments: Treatment[] = [
     id: "orthodontics",
     name: "치아교정",
     icon: "😁",
+    image: "https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80",
     shortDesc: "가지런하고 건강한 치열을 위한 교정 치료",
     description: "부정교합이나 삐뚤어진 치아를 바르게 배열하여 기능적·심미적 개선을 이루는 치료입니다. 투명교정, 세라믹교정, 설측교정 등 다양한 교정 옵션을 제공하며, 교정 전문의가 환자 맞춤형 치료 계획을 수립합니다.",
     targets: [
@@ -58,6 +61,7 @@ export const treatments: Treatment[] = [
     id: "cosmetic",
     name: "심미치료",
     icon: "✨",
+    image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80",
     shortDesc: "라미네이트, 미백으로 아름다운 미소 완성",
     description: "치아의 형태, 색상, 배열을 개선하여 보다 아름다운 미소를 만드는 치료입니다. 라미네이트, 치아미백, 레진 접착 등 최소 삭제 원칙 하에 자연스럽고 아름다운 결과를 추구합니다.",
     targets: [
@@ -80,6 +84,7 @@ export const treatments: Treatment[] = [
     id: "restorative",
     name: "충치/보존치료",
     icon: "🔧",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80",
     shortDesc: "충치 치료부터 신경 치료까지 꼼꼼하게",
     description: "충치로 손상된 치아를 제거하고 적합한 재료로 수복하여 치아의 기능을 회복하는 치료입니다. 레진, 인레이, 크라운 등 다양한 수복 방법을 환자의 상태에 맞게 제안합니다.",
     targets: [
@@ -102,6 +107,7 @@ export const treatments: Treatment[] = [
     id: "pediatric",
     name: "소아치과",
     icon: "👶",
+    image: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80",
     shortDesc: "아이의 첫 치과 경험을 즐겁고 편안하게",
     description: "성장기 아이들의 유치 관리부터 영구치 맹출 관리까지, 소아 전문 진료 프로토콜로 아이의 구강 건강을 체계적으로 관리합니다. 아이가 치과를 두려워하지 않도록 친근한 진료 환경을 제공합니다.",
     targets: [
@@ -124,6 +130,7 @@ export const treatments: Treatment[] = [
     id: "surgery",
     name: "구강외과",
     icon: "🏥",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80",
     shortDesc: "사랑니 발치, 턱관절 치료 등 외과적 처치",
     description: "사랑니 발치, 턱관절 장애 치료, 낭종 제거 등 구강 내 외과적 처치가 필요한 질환을 전문적으로 치료합니다. 정밀 진단 장비를 활용하여 안전하고 정확한 수술을 시행합니다.",
     targets: [

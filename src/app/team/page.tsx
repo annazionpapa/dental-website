@@ -81,9 +81,9 @@ export default function TeamPage() {
   return (
     <>
       {/* 히어로 */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-teal-dark via-teal to-teal-light overflow-hidden">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-sky/10 rounded-full blur-3xl" />
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-teal-dark overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/65 via-teal-dark/45 to-teal-dark/75" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-4">
             Our Team

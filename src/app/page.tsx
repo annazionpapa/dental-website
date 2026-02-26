@@ -22,9 +22,9 @@ export default function Home() {
   return (
     <>
       {/* 히어로 섹션 */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-dark via-teal to-teal-light overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/80 via-teal/60 to-teal-dark/90" />
+      <section className="relative min-h-screen flex items-center justify-center bg-teal-dark overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/60 via-teal-dark/40 to-teal-dark/70" />
 
         {/* 장식 원형 요소 */}
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
@@ -78,19 +78,29 @@ export default function Home() {
             {treatments.map((treatment, index) => (
               <ScrollRevealCard key={treatment.id} className={`scroll-card`}>
                 <Link href={`/treatments#${treatment.id}`} className="block group">
-                  <div className="p-8 rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-lg transition-all duration-300 bg-white">
-                    <div className="card-icon w-14 h-14 bg-sky-light rounded-xl flex items-center justify-center text-2xl mb-5 transition-colors duration-300">
-                      {treatment.icon}
+                  <div className="rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-xl transition-all duration-300 bg-white overflow-hidden">
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={treatment.image}
+                        alt={treatment.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <span className="absolute bottom-3 left-4 text-white text-3xl drop-shadow-lg">
+                        {treatment.icon}
+                      </span>
                     </div>
-                    <h3 className="card-title text-xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-teal">
-                      {treatment.name}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{treatment.shortDesc}</p>
-                    <div className="mt-5 flex items-center text-teal text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      자세히 보기
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <div className="p-6">
+                      <h3 className="card-title text-xl font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-teal">
+                        {treatment.name}
+                      </h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{treatment.shortDesc}</p>
+                      <div className="mt-4 flex items-center text-teal text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        자세히 보기
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -128,8 +138,8 @@ export default function Home() {
               </p>
               <div className="bg-white rounded-2xl p-6 shadow-sm mb-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-teal/10 rounded-full flex items-center justify-center">
-                    <span className="text-2xl">👨‍⚕️</span>
+                  <div className="w-16 h-16 rounded-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&q=80" alt="김민수 대표원장" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-bold text-gray-900 text-lg">김민수 대표원장</p>

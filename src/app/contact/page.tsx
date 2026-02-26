@@ -78,9 +78,9 @@ function ContactContent() {
   return (
     <>
       {/* 히어로 */}
-      <section className="relative bg-gradient-to-br from-teal-dark via-teal to-teal-light pt-32 pb-16 overflow-hidden">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-sky/10 rounded-full blur-3xl" />
+      <section className="relative bg-teal-dark pt-32 pb-16 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/65 via-teal-dark/45 to-teal-dark/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">
             Contact
