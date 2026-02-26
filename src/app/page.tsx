@@ -24,13 +24,13 @@ export default function Home() {
       {/* 히어로 섹션 */}
       <section className="relative min-h-screen flex items-center justify-center bg-teal-dark overflow-hidden">
         <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/60 via-teal-dark/40 to-teal-dark/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/65 via-teal-dark/50 to-teal-dark/75" />
 
         {/* 장식 원형 요소 */}
         <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-sky/10 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.3)' }}>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-accent text-sm font-bold tracking-widest uppercase mb-4 animate-fade-in-up">
             Since 2004 · 강남역 도보 3분
           </p>
