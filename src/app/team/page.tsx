@@ -51,7 +51,7 @@ const doctors: Doctor[] = [
     name: "이하은",
     role: "진료의",
     specialty: "소아치과 / 보존치료",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=800&q=80",
     highlight: "아이 눈높이 진료",
     credentials: [
       "서울대학교 치과대학 졸업",
