@@ -23,7 +23,7 @@ export default function Home() {
     <>
       {/* 히어로 섹션 */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-dark via-teal to-teal-light overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero/dental-hero.jpg')] bg-cover bg-center opacity-20" />
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-teal-dark/80 via-teal/60 to-teal-dark/90" />
 
         {/* 장식 원형 요소 */}
@@ -147,13 +147,12 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-teal/5 to-sky-light rounded-3xl p-8 lg:p-12 flex items-center justify-center min-h-[400px]">
-              <div className="text-center text-gray-400">
-                <div className="w-32 h-32 bg-teal/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-5xl">🏥</span>
-                </div>
-                <p className="text-sm">의료진 사진 영역</p>
-              </div>
+            <div className="rounded-3xl overflow-hidden min-h-[400px]">
+              <img
+                src="https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?w=800&q=80"
+                alt="치과 진료 모습"
+                className="w-full h-full min-h-[400px] object-cover"
+              />
             </div>
           </div>
         </div>
@@ -233,14 +232,16 @@ export default function Home() {
             <div>
               <p className="text-teal font-semibold text-sm tracking-widest uppercase mb-3">Location</p>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">오시는 길</h2>
-              <div className="bg-gray-200 rounded-2xl overflow-hidden h-[300px] flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p className="text-sm">카카오맵/네이버 지도 영역</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden h-[300px]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3!2d127.028!3d37.498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a0de0af15%3A0x63d2c6e462a9e7e8!2z6rCV64Ko64yA66GcIDM5Ng!5e0!3m2!1sko!2skr!4v1"
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="미소플러스치과의원 위치"
+                />
               </div>
               <div className="mt-4 bg-white rounded-xl p-4">
                 <p className="text-gray-700 font-medium">서울특별시 강남구 강남대로 396 미소빌딩 3층</p>

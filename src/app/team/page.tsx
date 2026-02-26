@@ -11,7 +11,7 @@ interface Doctor {
   name: string;
   role: string;
   specialty: string;
-  emoji: string;
+  image: string;
   highlight: string;
   credentials: string[];
 }
@@ -21,7 +21,7 @@ const doctors: Doctor[] = [
     name: "김민수",
     role: "대표원장",
     specialty: "치과보철과 전문의",
-    emoji: "👨‍⚕️",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80",
     highlight: "임플란트 3,000건+",
     credentials: [
       "서울대학교 치과대학 졸업",
@@ -36,7 +36,7 @@ const doctors: Doctor[] = [
     name: "박서연",
     role: "부원장",
     specialty: "치과교정과 전문의",
-    emoji: "👩‍⚕️",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80",
     highlight: "투명교정 전문",
     credentials: [
       "연세대학교 치과대학 졸업",
@@ -51,7 +51,7 @@ const doctors: Doctor[] = [
     name: "이하은",
     role: "진료의",
     specialty: "소아치과 / 보존치료",
-    emoji: "👩‍⚕️",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=800&q=80",
     highlight: "아이 눈높이 진료",
     credentials: [
       "서울대학교 치과대학 졸업",
@@ -65,7 +65,7 @@ const doctors: Doctor[] = [
     name: "최준혁",
     role: "진료의",
     specialty: "심미치료 / 보존치료",
-    emoji: "👨‍⚕️",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=80",
     highlight: "디지털 스마일 디자인",
     credentials: [
       "경희대학교 치과대학 졸업",
@@ -120,15 +120,15 @@ export default function TeamPage() {
                 key={doctor.name}
                 className="group rounded-2xl border border-gray-100 hover:border-teal/20 hover:shadow-xl transition-all duration-300 overflow-hidden bg-white"
               >
-                {/* 사진 placeholder */}
-                <div className="relative bg-gradient-to-br from-teal/5 to-sky-light p-8 flex items-center justify-center aspect-[4/3]">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-teal/10 rounded-full mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-4xl">{doctor.emoji}</span>
-                    </div>
-                  </div>
+                {/* 프로필 사진 */}
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={doctor.image}
+                    alt={`${doctor.name} ${doctor.role}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   {/* 하이라이트 뱃지 */}
-                  <span className="absolute top-4 right-4 px-3 py-1 bg-teal text-white text-xs font-semibold rounded-full">
+                  <span className="absolute top-4 right-4 px-3 py-1 bg-teal text-white text-xs font-semibold rounded-full shadow-lg">
                     {doctor.highlight}
                   </span>
                 </div>

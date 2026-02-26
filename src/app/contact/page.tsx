@@ -368,30 +368,17 @@ function ContactContent() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* 지도 placeholder */}
-            <div className="bg-gray-200 rounded-2xl overflow-hidden h-[350px] flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <svg
-                  className="w-12 h-12 mx-auto mb-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <p className="text-sm">카카오맵/네이버 지도 영역</p>
-              </div>
+            {/* 지도 */}
+            <div className="rounded-2xl overflow-hidden h-[350px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3!2d127.028!3d37.498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15a0de0af15%3A0x63d2c6e462a9e7e8!2z6rCV64Ko64yA66GcIDM5Ng!5e0!3m2!1sko!2skr!4v1"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="미소플러스치과의원 위치"
+              />
             </div>
 
             {/* 주소 및 교통 안내 */}
