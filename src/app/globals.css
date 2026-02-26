@@ -77,6 +77,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* 날짜 입력: 네이티브 텍스트 숨기고 오버레이 표시 */
+input[type="date"]::-webkit-datetime-edit { color: transparent; }
+
 
 @media (max-width: 767px) {
   body { padding-bottom: 64px; }
