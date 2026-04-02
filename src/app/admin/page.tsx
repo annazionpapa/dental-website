@@ -300,7 +300,7 @@ function Dashboard() {
     <div className="min-h-screen bg-gray-50">
       {/* 헤더 */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 bg-teal rounded-xl flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -329,7 +329,7 @@ function Dashboard() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* 통계 카드 */}
         <StatCards data={data} />
 
@@ -356,74 +356,97 @@ function Dashboard() {
           ))}
         </div>
 
-        {/* 상담 목록 */}
-        <div className="space-y-3">
-          {filteredData.length === 0 ? (
-            <div className="bg-white rounded-2xl border border-gray-100 p-12 text-center">
-              <p className="text-gray-400">접수된 상담이 없습니다</p>
-            </div>
-          ) : (
-            filteredData.map((item) => (
-              <div
-                key={item.id}
-                className={`bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-sm transition-shadow ${
-                  item.status === "new" ? "border-l-4 border-l-red-400" : ""
-                }`}
-              >
-                <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                  {/* 왼쪽: 정보 */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-lg">{statusIcons[item.status]}</span>
-                      <span className="font-bold text-gray-900">{item.name}</span>
-                      <span className="text-gray-400 text-sm">{item.phone}</span>
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${statusColors[item.status]}`}>
-                        {statusLabels[item.status]}
-                      </span>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
-                      <span>📌 {item.treatment}</span>
-                      <span>📅 {formatPreferredDate(item.preferred_date)}</span>
-                      <span>🕐 {formatDate(item.created_at)}</span>
-                    </div>
-                    {item.message && (
-                      <p className="mt-2 text-sm text-gray-600 bg-gray-50 rounded-lg p-3">
-                        {item.message}
-                      </p>
-                    )}
-                  </div>
+        {/* 상담 목록 - 테이블 */}
+        <div className="bg-white rounded-2xl border border-gray-100 overflow-x-auto">
+          <table className="w-full min-w-[900px]">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-100">
+                <th className="w-10 px-3 py-3"></th>
+                <th className="px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">이름</th>
+                <th className="px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">연락처</th>
+                <th className="px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">진료과목</th>
+                <th className="px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">희망날짜</th>
+                <th className="px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">증상/메모</th>
+                <th className="px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap">접수일</th>
+                <th className="px-3 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredData.length === 0 ? (
+                <tr>
+                  <td colSpan={8} className="p-12 text-center text-gray-400">
+                    접수된 상담이 없습니다
+                  </td>
+                </tr>
+              ) : (
+                filteredData.map((item) => (
+                  <tr
+                    key={item.id}
+                    className={`border-b border-gray-50 hover:bg-gray-50/50 transition-colors ${
+                      item.status === "new" ? "bg-red-50/30" : ""
+                    }`}
+                  >
+                    {/* 상태 아이콘 */}
+                    <td className="px-3 py-3 text-center text-base">{statusIcons[item.status]}</td>
 
-                  {/* 오른쪽: 상태 변경 */}
-                  <div className="flex items-center gap-2 shrink-0">
-                    {item.status !== "new" && (
-                      <button
-                        onClick={() => updateStatus(item.id, "new")}
-                        className="px-3 py-1.5 text-xs rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
-                      >
-                        새 접수
-                      </button>
-                    )}
-                    {item.status !== "in_progress" && (
-                      <button
-                        onClick={() => updateStatus(item.id, "in_progress")}
-                        className="px-3 py-1.5 text-xs rounded-lg bg-yellow-50 text-yellow-600 hover:bg-yellow-100 transition-colors"
-                      >
-                        확인중
-                      </button>
-                    )}
-                    {item.status !== "completed" && (
-                      <button
-                        onClick={() => updateStatus(item.id, "completed")}
-                        className="px-3 py-1.5 text-xs rounded-lg bg-green-50 text-green-600 hover:bg-green-100 transition-colors"
-                      >
-                        완료
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
+                    {/* 이름 */}
+                    <td className="px-3 py-3 font-semibold text-gray-900 text-sm whitespace-nowrap">{item.name}</td>
+
+                    {/* 연락처 */}
+                    <td className="px-3 py-3 text-sm text-gray-600 whitespace-nowrap">{item.phone}</td>
+
+                    {/* 진료과목 */}
+                    <td className="px-3 py-3">
+                      <span className="inline-block bg-teal/10 text-teal px-2 py-0.5 rounded-md text-xs font-medium whitespace-nowrap">
+                        {item.treatment}
+                      </span>
+                    </td>
+
+                    {/* 희망날짜 */}
+                    <td className="px-3 py-3 text-sm text-gray-600 whitespace-nowrap">{formatPreferredDate(item.preferred_date)}</td>
+
+                    {/* 증상/메모 */}
+                    <td className="px-3 py-3 text-sm text-gray-500 max-w-xs truncate" title={item.message || ""}>
+                      {item.message || <span className="text-gray-300">-</span>}
+                    </td>
+
+                    {/* 접수일 */}
+                    <td className="px-3 py-3 text-xs text-gray-400 whitespace-nowrap">{formatDate(item.created_at)}</td>
+
+                    {/* 상태 변경 버튼 */}
+                    <td className="px-3 py-3">
+                      <div className="flex items-center gap-1.5 justify-center">
+                        {item.status !== "new" && (
+                          <button
+                            onClick={() => updateStatus(item.id, "new")}
+                            className="px-2 py-1 text-[11px] rounded-md bg-red-50 text-red-600 hover:bg-red-100 transition-colors font-medium whitespace-nowrap"
+                          >
+                            접수
+                          </button>
+                        )}
+                        {item.status !== "in_progress" && (
+                          <button
+                            onClick={() => updateStatus(item.id, "in_progress")}
+                            className="px-2 py-1 text-[11px] rounded-md bg-yellow-50 text-yellow-600 hover:bg-yellow-100 transition-colors font-medium whitespace-nowrap"
+                          >
+                            확인
+                          </button>
+                        )}
+                        {item.status !== "completed" && (
+                          <button
+                            onClick={() => updateStatus(item.id, "completed")}
+                            className="px-2 py-1 text-[11px] rounded-md bg-green-50 text-green-600 hover:bg-green-100 transition-colors font-medium whitespace-nowrap"
+                          >
+                            완료
+                          </button>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
         </div>
       </main>
     </div>
